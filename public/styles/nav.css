@@ -12,11 +12,10 @@
 
 #title {
   font-family: 'Bungee', cursive;
+  padding-bottom: 10px;
+  border-bottom: 10px;
 }
 
-#bold {
-  font-weight: 900;
-}
 
 
 /* Ask about 1em away from viewport */
