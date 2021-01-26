@@ -28,5 +28,8 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
 
 }
+b {
+  font-weight: bold;
+}
 
 /* npm run local */
