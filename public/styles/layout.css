@@ -18,7 +18,7 @@ head {
 }
 
 span {
-  font-family: 'Bungee', cursive;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 body {
@@ -26,7 +26,6 @@ body {
   background-color: #f4f1ec;
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif;
-  padding: 1.5em;
 
 }
 
