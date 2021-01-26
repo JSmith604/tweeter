@@ -26,10 +26,18 @@ body {
   background-color: #f4f1ec;
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif;
-
 }
-b {
-  font-weight: bold;
+
+.container {
+  display: flex;
+  width: 90%;
+  flex-direction: column;
+  background-color: #f4f1ec;
+  justify-content: center;
+  align-items: center;
+
+
+
 }
 
 /* npm run local */

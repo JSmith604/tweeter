@@ -14,5 +14,9 @@
   font-family: 'Bungee', cursive;
 }
 
+#bold {
+  font-weight: 900;
+}
+
 
 /* Ask about 1em away from viewport */
