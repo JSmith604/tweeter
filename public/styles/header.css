@@ -7,6 +7,7 @@
   flex-direction: column;
   background-color: #008fd1;
   background-image: url("https://www.transparenttextures.com/patterns/foggy-birds.png");
+  position: relative;
 
   
 }
