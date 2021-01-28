@@ -49,21 +49,27 @@ const data = [
     footer.append(dateCreated);
     footer.append(icons);
     tweetDocObj.append(footer);
-    console.log(tweetDocObj);
     return tweetDocObj;
    }
  
 
- const renderTweets = function(tweets) {
+  const renderTweets = function(tweets) {
   // loops through tweets
-  const tweetContainer = $('.tweet-container');
-  for(let tweet of tweets) {
-    tweetContainer.append(createTweetElement(tweet))
-  }
+    const tweetContainer = $('.tweet-container');
+    for(let tweet of tweets) {
+      tweetContainer.append(createTweetElement(tweet))
+    }
   // calls createTweetElement for each tweet
   // takes return value and appends it to the tweets container
 
   }
-renderTweets(data);
+  renderTweets(data);
+  
+  $("form").on("submit", function (event) {
+    event.preventDefault();
+    $.ajax('/tweets', {method: 'POST', data: this.serialize()})
+  }).then(function(result) {
+    console.log(result);
+  })
 })
 
