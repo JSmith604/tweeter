@@ -6,6 +6,7 @@
   font-family: 'Source Sans Pro', sans-serif;
   padding: 1.5em;
   display: flex;
+  align-items: center;
   justify-content: space-between;
   position: sticky;
   top: 0px;
@@ -14,12 +15,13 @@
 
 }
 
-#title {
+nav .title {
   font-family: 'Bungee', cursive;
-  padding-bottom: 10px;
-  border-bottom: 10px;
 }
 
+nav .sparkle {
+  font-weight: bold;
+}
 
 
 /* Ask about 1em away from viewport */

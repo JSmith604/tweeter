@@ -1,0 +1,31 @@
+.tweet-container {
+  width: 90%;
+  margin: 1.5em;
+}
+
+.user-tweet {
+  border: 3px solid rgb(83, 83, 83);
+  font-weight: bold;
+}
+
+.user-tweet img {
+  height: 86px;
+}
+
+.tweet {
+  border-bottom: 3px solid rgb(83, 83, 83);
+}
+
+.user-name {
+  color: grey;
+}
+
+footer .date {
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+}
+
+footer .icons {
+  font-size: 16px;
+}
