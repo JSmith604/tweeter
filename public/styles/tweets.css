@@ -28,4 +28,6 @@ footer .date {
 
 footer .icons {
   font-size: 16px;
+  display: flex;
+  align-self: flex-end;
 }
