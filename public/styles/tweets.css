@@ -6,6 +6,25 @@
 .user-tweet {
   border: 3px solid rgb(83, 83, 83);
   font-weight: bold;
+  padding: 30px 15px 20px;
+
+}
+
+.tweet-top {
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.picture-name {
+  display: flex;
+  align-items: center;
+
+}
+
+.profile {
+  padding-left: 10px;
 }
 
 .user-tweet img {
@@ -13,21 +32,26 @@
 }
 
 .tweet {
+
   border-bottom: 3px solid rgb(83, 83, 83);
+  margin: 10px;
+  padding-bottom: 10px;
 }
 
 .user-name {
   color: grey;
 }
 
-footer .date {
-  font-size: 16px;
+footer {
   display: flex;
   justify-content: space-between;
+  margin: 0px 10px;
+}
+
+footer .date {
+  font-size: 16px;
 }
 
 footer .icons {
   font-size: 16px;
-  display: flex;
-  align-self: flex-end;
 }
