@@ -4,6 +4,31 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+const data = [
+  {
+    "user": {
+      "name": "Newton",
+      "avatars": "https://i.imgur.com/73hZDYK.png",
+      "handle": "@SirIsaac"
+    },
+    "content": {
+      "text": "If I have seen further it is by standing on the shoulders of giants"
+    },
+    "created_at": 1611639431836
+  },
+  {
+    "user": {
+      "name": "Descartes",
+      "avatars": "https://i.imgur.com/nlhLi3I.png",
+      "handle": "@rd"
+    },
+    "content": {
+      "text": "Je pense , donc je suis"
+    },
+    "created_at": 1611725831836
+  }
+]
+
  $(document).ready(function() {
    const createTweetElement = function(tweetObject) {
     const tweetDocObj = $('<article class="user-tweet"></article>');
@@ -27,17 +52,18 @@
     console.log(tweetDocObj);
     return tweetDocObj;
    }
-   createTweetElement({
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd"
-    },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1611718759326
-  })
- })
-
  
+
+ const renderTweets = function(tweets) {
+  // loops through tweets
+  const tweetContainer = $('.tweet-container');
+  for(let tweet of tweets) {
+    tweetContainer.append(createTweetElement(tweet))
+  }
+  // calls createTweetElement for each tweet
+  // takes return value and appends it to the tweets container
+
+  }
+renderTweets(data);
+})
+
