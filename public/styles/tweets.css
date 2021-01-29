@@ -1,3 +1,5 @@
+/* Style for tweets displayed in the tweet container */
+
 .tweet-container {
   width: 90%;
   margin: 1.5em;
@@ -7,11 +9,9 @@
   border: 3px solid rgb(83, 83, 83);
   font-weight: bold;
   padding: 30px 15px 20px;
-
 }
 
 .tweet-top {
-
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -20,7 +20,6 @@
 .picture-name {
   display: flex;
   align-items: center;
-
 }
 
 .profile {
@@ -32,7 +31,6 @@
 }
 
 .tweet {
-
   border-bottom: 3px solid rgb(83, 83, 83);
   margin: 10px;
   padding-bottom: 10px;
@@ -56,5 +54,4 @@ footer .date {
 .icons>* {
   padding: 0px 5px;
   font-size: 16px;
-
 }

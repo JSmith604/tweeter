@@ -1,8 +1,4 @@
-/*
- * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
- * https://css-tricks.com/international-box-sizing-awareness-day/
- * Do not modify these two selectors, please
- */
+/* Global layout and styling */
 html {
   box-sizing: border-box;
 }
@@ -10,9 +6,6 @@ html {
   box-sizing: inherit;
 }
 
-/*
- * Global layout stuff
- */
 head {
   font-family: 'Bungee', cursive;
 }
@@ -28,6 +21,7 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
+/* Style for the top level flex box container*/
 .container {
   display: flex;
   width: 90%;
@@ -37,9 +31,3 @@ body {
   margin: auto;
 }
 
-/* #compose-tweet {
-  display: flex;
-  justify-content: flex-start;
-} */
-
-/* npm run local */

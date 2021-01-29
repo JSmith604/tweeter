@@ -1,8 +1,4 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
+//Create tweet object from index.html and backend data using JQuery
 
  $(document).ready(function() {
    const createTweetElement = function(tweetObject) {
@@ -14,10 +10,10 @@
     const tweetTop = $('<div class="tweet-top"></div');
     const pictureName = $('<div class="picture-name"></div>');
     const content = tweetObject.content.text;
-    const tweet = $('<div class="tweet"></div>').text(content);
+    const tweet = $('<div class="tweet"></div>').text(content); //Prevents cross site scripting
     const date = new Date(tweetObject.created_at);
     const footer = $('<footer></footer>');
-    const dateCreated = $('<div class="date">' + date.toLocaleDateString() + '</div>');
+    const dateCreated = $('<div class="date">' + date.toLocaleDateString() + '</div>'); //Adds date created
     const icons = $('<div class="icons"><i class="fas fa-flag"></i><i class="fas fa-heart"></i><i class="fas fa-retweet"></i></div>');
     pictureName.append(profilePicture);
     pictureName.append(profileName);
@@ -30,25 +26,24 @@
     tweetDocObj.append(footer);
     return tweetDocObj;
    }
+   //Ajax request to load tweets on the page
   const loadTweets = function () {
      $.ajax('/tweets', {method: 'GET'})
       .then(function(result) {
         renderTweets(result); 
    })
-  }
+  }  //Brings newest tweet to the top of the page
   const renderTweets = function(tweets) {
-  // loops through tweets
     const tweetContainer = $('.tweet-container');
     tweetContainer.empty();
     for(let tweet of tweets) {
       tweetContainer.prepend(createTweetElement(tweet))
     }
-  // calls createTweetElement for each tweet
-  // takes return value and appends it to the tweets container
-
-  }
+  
+  } 
   loadTweets();
   
+  //Posts a new tweet or sends an alert depending on the length of tweet submitted
   $("form").on("submit", function (event) {
     event.preventDefault();
     let textArea = $('#tweet-text');
@@ -61,7 +56,7 @@
       $.ajax('/tweets', {method: 'POST', data: {text: validatedText}})
       .then(function(result) {
         loadTweets();
-        textArea.val("");
+        textArea.val(""); //Clears text box after new tweet is posted
       })
     }
   })
