@@ -46,12 +46,15 @@ footer {
   display: flex;
   justify-content: space-between;
   margin: 0px 10px;
+  align-items: center;
 }
 
 footer .date {
   font-size: 16px;
 }
 
-footer .icons {
+.icons>* {
+  padding: 0px 5px;
   font-size: 16px;
+
 }
