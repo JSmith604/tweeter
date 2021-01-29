@@ -4,31 +4,6 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png",
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1611639431836
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd"
-    },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1611725831836
-  }
-]
-
  $(document).ready(function() {
    const createTweetElement = function(tweetObject) {
     const tweetDocObj = $('<article class="user-tweet"></article>');
@@ -55,8 +30,12 @@ const data = [
     tweetDocObj.append(footer);
     return tweetDocObj;
    }
- 
-
+  const loadTweets = function () {
+     $.ajax('/tweets', {method: 'GET'})
+      .then(function(result) {
+        renderTweets(result); 
+   })
+  }
   const renderTweets = function(tweets) {
   // loops through tweets
     const tweetContainer = $('.tweet-container');
@@ -67,38 +46,18 @@ const data = [
   // takes return value and appends it to the tweets container
 
   }
-  renderTweets(data);
+  loadTweets();
   
   $("form").on("submit", function (event) {
     event.preventDefault();
-    $.ajax('/tweets', {method: 'POST', data: this.serialize()})
-  }).then(function(result) {
-    console.log(result);
+    let validatedText = $('#tweet-text').val();
+    if(validatedText.length === 0) {
+      alert("Please write something");
+    } else if(validatedText.length > 140) {
+      alert("Your tweet exceeds the character limit");
+    } else {
+      $.ajax('/tweets', {method: 'POST', data: {text: validatedText}});
+    }
   })
 })
-
-//Previous version
-
-// $(document).ready(function() {
-//   const createTweetElement = function(tweetObject) {
-//    const tweetDocObj = $('<article class="user-tweet"></article>');
-//    const user = tweetObject.user;
-//    const profilePicture = $('<img src=' + user.avatars + ' alt="' + user.name +'">');
-//    const profileName = $('<div class="profile">' + user.name + '</div>');
-//    const handle = $('<div class="user-name">' + user.handle + '</div>');
-//    const content = tweetObject.content.text;
-//    const tweet = $('<div class="tweet">' + content + '</div>');
-//    const date = new Date(tweetObject.created_at);
-//    const footer = $('<footer></footer>');
-//    const dateCreated = $('<div class="date">' + date.toLocaleDateString() + '</div>');
-//    const icons = $('<div class="icons"><i class="fas fa-flag"></i><i class="fas fa-heart"></i><i class="fas fa-retweet"></i></div>');
-//    tweetDocObj.append(profilePicture);
-//    tweetDocObj.append(profileName);
-//    tweetDocObj.append(handle);
-//    tweetDocObj.append(tweet);
-//    footer.append(dateCreated);
-//    footer.append(icons);
-//    tweetDocObj.append(footer);
-//    return tweetDocObj;
-//   }
 
