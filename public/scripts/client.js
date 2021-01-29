@@ -14,7 +14,7 @@
     const tweetTop = $('<div class="tweet-top"></div');
     const pictureName = $('<div class="picture-name"></div>');
     const content = tweetObject.content.text;
-    const tweet = $('<div class="tweet">' + content + '</div>');
+    const tweet = $('<div class="tweet"></div>').text(content);
     const date = new Date(tweetObject.created_at);
     const footer = $('<footer></footer>');
     const dateCreated = $('<div class="date">' + date.toLocaleDateString() + '</div>');
@@ -51,7 +51,8 @@
   
   $("form").on("submit", function (event) {
     event.preventDefault();
-    let validatedText = $('#tweet-text').val();
+    let textArea = $('#tweet-text');
+    let validatedText = textArea.val();
     if(validatedText.length === 0) {
       alert("Please write something");
     } else if(validatedText.length > 140) {
@@ -60,6 +61,7 @@
       $.ajax('/tweets', {method: 'POST', data: {text: validatedText}})
       .then(function(result) {
         loadTweets();
+        textArea.val("");
       })
     }
   })
