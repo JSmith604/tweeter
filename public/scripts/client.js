@@ -39,8 +39,9 @@
   const renderTweets = function(tweets) {
   // loops through tweets
     const tweetContainer = $('.tweet-container');
+    tweetContainer.empty();
     for(let tweet of tweets) {
-      tweetContainer.append(createTweetElement(tweet))
+      tweetContainer.prepend(createTweetElement(tweet))
     }
   // calls createTweetElement for each tweet
   // takes return value and appends it to the tweets container
@@ -56,7 +57,10 @@
     } else if(validatedText.length > 140) {
       alert("Your tweet exceeds the character limit");
     } else {
-      $.ajax('/tweets', {method: 'POST', data: {text: validatedText}});
+      $.ajax('/tweets', {method: 'POST', data: {text: validatedText}})
+      .then(function(result) {
+        loadTweets();
+      })
     }
   })
 })
