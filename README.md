@@ -1,7 +1,12 @@
 # Tweeter Project
 
-Tweeter is a simple, single-page AJAX-based Twitter clone that uses jQuery, HTML and CSS. 
+Tweeter is a simple, single-page AJAX-based Twitter clone that uses jQuery, HTML and CSS. Tweeter is built with responsive design in mind for both mobile and desktop screens.
 
+## Screenshots
+
+!["Screenshot of desktop version"](https://github.com/JSmith604/tweeter/blob/master/docs/desktop-tweeter.png?raw=true)
+
+!["Screenshot of desktop version"](https://github.com/JSmith604/tweeter/blob/master/docs/mobile-tweeter.png?raw=true)
 
 
 ## Getting Started
@@ -20,6 +25,7 @@ Tweeter is a simple, single-page AJAX-based Twitter clone that uses jQuery, HTML
 - MD5
 
 ## Dev Dependencies
+
 - Nodemon
 
 
