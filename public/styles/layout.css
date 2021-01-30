@@ -19,8 +19,13 @@ body {
   background-color: #f4f1ec;
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif;
+  
 }
 
+.responsive-container {
+  display: flex;
+  flex-direction: column;
+}
 /* Style for the top level flex box container*/
 .container {
   display: flex;
@@ -29,5 +34,16 @@ body {
   background-color: #f4f1ec;
   align-self: center;
   margin: auto;
+  padding: 20px;
 }
 
+
+/* 
+New layout stuff below*/
+@media only screen and (min-width: 1024px) {
+  .responsive-container {
+    display: flex;
+    flex-direction: row;
+  }
+  
+}

@@ -9,4 +9,21 @@
   background-color: #008fd1;
   background-image: url("https://www.transparenttextures.com/patterns/foggy-birds.png");
   position: relative;
+  margin: 40px;
+}
+
+.profile-img {
+  padding-top: 40px;
+  padding-bottom: 40px;;
+}
+
+.name {
+  margin: 0;
+}
+
+@media only screen and (max-width: 1023px) {
+  .header {
+    margin: 0px
+  }
+  
 }

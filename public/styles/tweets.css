@@ -1,8 +1,8 @@
 /* Style for tweets displayed in the tweet container */
 
 .tweet-container {
-  width: 90%;
-  margin: 1.5em;
+  width: 100%;
+  
 }
 
 .user-tweet {
