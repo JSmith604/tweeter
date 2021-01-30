@@ -8,10 +8,13 @@ Tweeter for desktops and laptops
 
 !["Screenshot of desktop version"](https://github.com/JSmith604/tweeter/blob/master/docs/desktop-tweeter.png?raw=true)
 
-Tweeter for large mobile phones and tablets
+Tweeter for larger mobile phones and tablets
 
-!["Screenshot of desktop version"](https://github.com/JSmith604/tweeter/blob/master/docs/mobile-tweeter.png?raw=true)
+!["Screenshot of mobile version"](https://github.com/JSmith604/tweeter/blob/master/docs/mobile-tweeter.png?raw=true)
 
+Tweeter for smaller mobile phones
+
+!["Screenshot of small mobile version"](https://github.com/JSmith604/tweeter/blob/master/docs/small-mobile-tweeter.png?raw=true)
 
 ## Getting Started
 
